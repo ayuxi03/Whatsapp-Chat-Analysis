@@ -19,18 +19,28 @@ if uploaded_file is not None:
 
     # Fetch unique users
     user_list = df['user'].unique().tolist()
-    user_list.remove('whatsapp_notification')
-    user_list.sort()
+
+    # Replace 'whatsapp_notification' with 'Overall'
+    user_list.remove('whatsapp_notification') 
+    user_list.sort() # Sort the user list alphabetically
     user_list.insert(0, "Overall")
 
+    # User selection menu
     selected_user = st.sidebar.selectbox("Show analysis wrt", user_list)
 
+    # When the button is clicked, perform analysis
     if st.sidebar.button("Show Analysis"):
 
-        num_messages = helper.fetch_stats(selected_user, df)
+        # Fetch stats using helper module
+        num_messages, num_words = helper.fetch_stats(selected_user, df)
         
+        # Create 4 columns to display stats
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
             st.header("Total Messages")
             st.title(num_messages)
+
+        with col2:
+            st.header("Total Words")
+            st.title(num_words)
