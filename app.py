@@ -1,5 +1,6 @@
 import streamlit as st
 import preprocessor, helper
+import matplotlib.pyplot as plt
 
 st.sidebar.title("WhatsApp Chat Analyzer")
 
@@ -32,7 +33,7 @@ if uploaded_file is not None:
     if st.sidebar.button("Show Analysis"):
 
         # Fetch stats using helper module
-        num_messages, num_words = helper.fetch_stats(selected_user, df)
+        num_messages, num_words, num_media_messages, num_links = helper.fetch_stats(selected_user, df)
         
         # Create 4 columns to display stats
         col1, col2, col3, col4 = st.columns(4)
@@ -44,3 +45,29 @@ if uploaded_file is not None:
         with col2:
             st.header("Total Words")
             st.title(num_words)
+
+        with col3:
+            st.header("Media Shared")
+            st.title(num_media_messages)
+        
+        with col4:
+            st.header("Links Shared")
+            st.title(num_links)
+
+        # Finding the most active user in the group (only for Overall)
+        if selected_user == 'Overall':
+            st.title("Most Active Users")
+            x, new_df = helper.fetch_most_active_users(df)
+
+            fig, ax = plt.subplots() # Create a figure and axis
+            
+            # Create 2 columns to display bar chart and pie chart side by side
+            col1, col2 = st.columns(2)
+
+            with col1:
+                ax.bar(x.index, x.values) # Bar chart using the axis
+                plt.xticks(rotation='vertical') # Rotate x-axis labels vertically
+                st.pyplot(fig)
+            
+            with col2:
+                st.dataframe(new_df) # Display dataframe of most active users
