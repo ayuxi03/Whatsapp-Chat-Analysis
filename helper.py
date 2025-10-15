@@ -1,4 +1,7 @@
 from urlextract import URLExtract
+from wordcloud import WordCloud
+import pandas as pd
+from collections import Counter
 
 extractor = URLExtract()
 
@@ -36,3 +39,53 @@ def fetch_most_active_users(df):
 
     df = round((df['user'].value_counts() / df.shape[0]) * 100, 2).reset_index().rename(columns={'count': 'percent'})
     return x, df
+
+
+def create_wordcloud(selected_user, df):
+
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    
+    temp = df[df['user'] != 'whatsapp_notification']
+    temp = temp[~temp['message'].isin(['<Media omitted>\n', 'You deleted this message\n', 'This message was deleted\n'])]
+
+    f = open('banglish_hinglish_stopwords.txt', 'r')
+    stop_words = f.read().splitlines()
+
+    wc = WordCloud(
+        width=400,
+        height=200,
+        min_font_size=10,
+        background_color='white',
+        max_words=100,
+        colormap='Spectral_r',
+        stopwords=set(stop_words))
+    
+    df_wc = wc.generate(temp['message'].str.cat(sep=" "))
+
+    return df_wc
+
+def most_common_words(selected_user, df):
+
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    
+    temp = df[df['user'] != 'whatsapp_notification']
+    temp = temp[~temp['message'].isin(['<Media omitted>\n', 'You deleted this message\n', 'This message was deleted\n'])]
+
+    # remove stop words
+    # stopwords filter
+    
+    f = open('banglish_hinglish_stopwords.txt', 'r')
+    stop_words = f.read()
+
+    words = []
+
+    for message in temp['message']:
+        for word in message.lower().split():
+            if word not in stop_words:
+                words.append(word)
+
+    most_common_df = pd.DataFrame(Counter(words).most_common(20))
+
+    return most_common_df
