@@ -140,6 +140,7 @@ def monthly_timeline(selected_user, df):
 
     return monthly_timeline
 
+
 def daily_timeline(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
@@ -149,3 +150,17 @@ def daily_timeline(selected_user, df):
     daily_timeline.rename(columns = {'message': 'message_count'}, inplace=True)
 
     return daily_timeline
+
+
+def week_activity_map(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    
+    return df['day_name'].value_counts()
+
+
+def month_activity_map(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    
+    return df['month'].value_counts()
