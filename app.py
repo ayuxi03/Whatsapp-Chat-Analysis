@@ -59,11 +59,21 @@ if uploaded_file is not None:
 
         # Montly activity timeline
         st.title('Monthly Activity Timeline')
-        timeline = helper.monthly_timeline(selected_user, df)
+        monthly_timeline = helper.monthly_timeline(selected_user, df)
         fig, ax = plt.subplots(figsize=(15,5))
-        ax.plot(timeline['time'], timeline['message_count'])
+        ax.plot(monthly_timeline['time'], monthly_timeline['message_count'])
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
+
+        # Daily activity timeline
+        st.title('Daily Activity Timeline')
+        daily_timeline = helper.daily_timeline(selected_user, df)
+        fig, ax = plt.subplots(figsize=(15,5))
+        ax.plot(daily_timeline['only_date'], daily_timeline['message_count'])
+        plt.xticks(rotation='vertical')
+        st.pyplot(fig)
+
+        # Most active days map
 
         # Finding the most active user in the group (only for Overall)
         if selected_user == 'Overall':
@@ -92,7 +102,7 @@ if uploaded_file is not None:
         st.pyplot(fig)
 
 
-        # Displaying dataframe of most common words
+        # Displaying bar chart of most common words
         st.title("Most Common Words")
         most_common_df = helper.most_common_words(selected_user, df)
         fig, ax = plt.subplots(figsize=(10,5))

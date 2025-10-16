@@ -128,14 +128,24 @@ def monthly_timeline(selected_user, df):
         df = df[df['user'] == selected_user]
 
     # Add message count column by month
-    timeline = df.groupby(['year', 'month_num', 'month']).count()['message'].reset_index()
-    timeline.rename(columns = {'message': 'message_count'}, inplace=True)
+    monthly_timeline = df.groupby(['year', 'month_num', 'month']).count()['message'].reset_index()
+    monthly_timeline.rename(columns = {'message': 'message_count'}, inplace=True)
 
     # create month-year column
     time=[]
-    for i in range(timeline.shape[0]):
-        time.append(timeline['month'][i] + "-" + str(timeline['year'][i]))
+    for i in range(monthly_timeline.shape[0]):
+        time.append(monthly_timeline['month'][i] + "-" + str(monthly_timeline['year'][i]))
 
-    timeline['time'] = time
+    monthly_timeline['time'] = time
 
-    return timeline
+    return monthly_timeline
+
+def daily_timeline(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+
+    # Add message count column by date
+    daily_timeline = df.groupby('only_date').count()['message'].reset_index()
+    daily_timeline.rename(columns = {'message': 'message_count'}, inplace=True)
+
+    return daily_timeline
