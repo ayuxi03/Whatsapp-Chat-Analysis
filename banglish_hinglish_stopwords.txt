@@ -115,6 +115,7 @@ aur
 avum
 aya
 aye
+b
 ba
 baad
 baar
@@ -157,6 +158,7 @@ better
 between
 beyond
 bhai
+bhalo
 bheetar
 bhi
 bhitar
@@ -179,6 +181,7 @@ btw
 but
 by
 byapar
+c
 came
 can
 cannot
@@ -300,6 +303,7 @@ ex
 exactly
 example
 except
+f
 far
 few
 fifth
@@ -338,6 +342,7 @@ got
 gotten
 greetings
 guys
+h
 ha
 haan
 had
@@ -476,6 +481,7 @@ itself
 ityaadi
 ityadi
 i've
+j
 ja
 jaa
 jab
@@ -483,6 +489,7 @@ jabe
 jabh
 jache
 jachhi
+jah
 jaha
 jahaan
 jahan
@@ -638,6 +645,10 @@ kyu
 kyuki
 kyun
 kyunki
+l
+lagche
+lagchilo
+lage
 lagta
 lagte
 lagti
@@ -646,6 +657,9 @@ lately
 later
 le
 least
+lege
+legeche
+legechilo
 lekar
 lekin
 less
@@ -717,6 +731,7 @@ mustnt
 mustn't
 my
 myself
+n
 na
 naa
 naah
@@ -736,6 +751,7 @@ needn
 neednt
 needn't
 needs
+nei
 neither
 never
 nevertheless
@@ -791,6 +807,7 @@ outside
 over
 overall
 own
+p
 pabe
 paben
 paisi
@@ -1038,6 +1055,7 @@ tumi
 tune
 twice
 two
+u
 um
 umm
 un
@@ -1075,6 +1093,7 @@ uss
 usse
 ussi
 usually
+v
 vaala
 vaale
 vaali
@@ -1088,12 +1107,14 @@ vaisi
 vala
 vale
 vali
+valo
 various
 ve
 very
 via
 viz
 vo
+w
 waala
 waale
 waali
