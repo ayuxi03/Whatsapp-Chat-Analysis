@@ -32,9 +32,10 @@ def preprocess(data):
     df['message'] = messages
     df.drop(columns=['user_message'], inplace=True)
 
-    # extract year, month, day, hour, minute, day_name, period
+    # extract year, month_name, month_number day, hour, minute, day_name, period
     df['year'] = df['date'].dt.year
-    df['month'] = df['date'].dt.month
+    df['month'] = df['date'].dt.month_name()
+    df['month_num'] = df['date'].dt.month
     df['day'] = df['date'].dt.day
     df['hour'] = df['date'].dt.hour
     df['minute'] = df['date'].dt.minute
