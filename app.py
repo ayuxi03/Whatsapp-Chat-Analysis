@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
     )
 
-uploaded_file = st.sidebar.file_uploader("Choose a file")
+uploaded_file = st.sidebar.file_uploader("Choose a WhatsApp chat file")
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
