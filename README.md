@@ -7,9 +7,9 @@
 
 A **web application** that allows users to analyze their WhatsApp chat history. Upload your exported `.txt` chats to gain insights, visualize activity patterns, and track messaging trends over time. Built with **Python** and **Streamlit** for simplicity and interactivity.
 
+<br>
 
-
-## 🚀 Features
+## Features
 
 - **Chat Analysis:** Analyze exported WhatsApp `.txt` chat files.  
 - **Message Insights:** Count total messages, words, and emojis.  
@@ -18,18 +18,18 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 - **Visual Analytics:** Interactive plots and charts to visualize trends over time.  
 - **User-Friendly Interface:** Simple drag-and-drop upload and instant results.  
 
+<br>
 
-
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend / App Interface:** Streamlit  
 - **Data Analysis & Visualization:** Python, Pandas, Matplotlib, Seaborn  
 - **Development Environment:** Jupyter Notebook, VS Code  
 - **Deployment:** Render  
 
+<br>
 
-
-## ⚡ Installation
+## Installation
 
 1. **Clone the repository:**  
    ```bash
@@ -55,9 +55,9 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 5. **Open your browser:**  
     Visit: [http://localhost:8501](http://localhost:8501)
 
+<br>
 
-
-## 📝 Usage
+## Usage
 
 1. Export your WhatsApp chat as a `.txt` file.
 2. Upload the file in the app interface.
@@ -67,8 +67,8 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
     - Chat activity trends over time
 4. Visualizations update interactively based on the uploaded chat.
 
+<br>
 
-
-## 💡 Contributing
+## Contributing
 
 Contributions to the project are welcome! If you have suggestions or find any issues, please open an issue or submit a pull request.
