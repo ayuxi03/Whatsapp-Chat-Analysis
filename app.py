@@ -5,7 +5,11 @@ import matplotlib.font_manager as fm
 import seaborn as sns
 
 st.sidebar.title("WhatsApp Chat Analyzer")
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="WhatsApp Chat Analyzer",
+    page_icon="📊",
+    layout="wide",
+    )
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 if uploaded_file is not None:
