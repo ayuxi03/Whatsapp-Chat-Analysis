@@ -1,6 +1,7 @@
 import streamlit as st
 import preprocessor, helper
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import seaborn as sns
 
 st.sidebar.title("WhatsApp Chat Analyzer")
@@ -139,6 +140,12 @@ if uploaded_file is not None:
         st.title("Emoji Analysis")
         emoji_df = helper.emoji_helper(selected_user, df)
 
+        # Load the local emoji font
+        fm.fontManager.addfont("seguiemj.ttf")
+
+        # Set matplotlib to use it
+        plt.rcParams['font.family'] = fm.FontProperties(fname="seguiemj.ttf").get_name()
+
         col1, col2 = st.columns(2)
 
         with col1:
@@ -146,7 +153,6 @@ if uploaded_file is not None:
 
         with col2:
             fig, ax = plt.subplots()
-            plt.rcParams['font.family'] = 'DejaVu Sans'
             ax.pie(
                 emoji_df['count'].head(),
                 labels=emoji_df['emoji'].head(),
