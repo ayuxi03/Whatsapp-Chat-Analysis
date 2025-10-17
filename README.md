@@ -60,11 +60,13 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 
 1. Export your WhatsApp chat as a `.txt` file.
 2. Upload the file in the app interface.
-3. Explore analytics such as:
+3. Click the Show Analysis button.
+4. Explore analytics such as:
     - Most active users
     - Most common words and emojis
     - Chat activity trends over time
-4. Visualizations update interactively based on the uploaded chat.
+5. Visualizations update interactively based on the uploaded chat.
+5. Choose specific user or overall analysis from dropdown menu.
 
 <br>
 
