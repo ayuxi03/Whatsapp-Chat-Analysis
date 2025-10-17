@@ -146,7 +146,7 @@ if uploaded_file is not None:
 
         with col2:
             fig, ax = plt.subplots()
-            plt.rcParams['font.family'] = 'Segoe UI Emoji'
+            plt.rcParams['font.family'] = 'DejaVu Sans'
             ax.pie(
                 emoji_df['count'].head(),
                 labels=emoji_df['emoji'].head(),
