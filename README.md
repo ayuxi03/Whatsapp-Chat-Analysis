@@ -1,4 +1,4 @@
-# WhatsApp Chat Analyzer 🟢
+# WhatsApp Chat Analyzer
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30-orange)](https://streamlit.io/)
@@ -7,7 +7,7 @@
 
 A **web application** that allows users to analyze their WhatsApp chat history. Upload your exported `.txt` chats to gain insights, visualize activity patterns, and track messaging trends over time. Built with **Python** and **Streamlit** for simplicity and interactivity.
 
----
+
 
 ## 🚀 Features
 
@@ -18,7 +18,7 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 - **Visual Analytics:** Interactive plots and charts to visualize trends over time.  
 - **User-Friendly Interface:** Simple drag-and-drop upload and instant results.  
 
----
+
 
 ## 🛠 Tech Stack
 
@@ -27,7 +27,7 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 - **Development Environment:** Jupyter Notebook, VS Code  
 - **Deployment:** Render  
 
----
+
 
 ## ⚡ Installation
 
@@ -55,7 +55,7 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 5. **Open your browser:**  
     Visit: [http://localhost:8501](http://localhost:8501)
 
----
+
 
 ## 📝 Usage
 
@@ -67,7 +67,7 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
     - Chat activity trends over time
 4. Visualizations update interactively based on the uploaded chat.
 
----
+
 
 ## 💡 Contributing
 
