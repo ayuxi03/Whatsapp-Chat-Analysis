@@ -4,6 +4,7 @@ import pandas as pd
 from collections import Counter
 import emoji
 import re
+from matplotlib import cm
 
 extractor = URLExtract()
 
@@ -67,13 +68,14 @@ def create_wordcloud(selected_user, df):
 
     # Generate the word cloud
     wc = WordCloud(
-        width=400,
-        height=200,
+        width=900,
+        height=450,
         min_font_size=10,
         background_color='white',
         max_words=100,
-        colormap='Spectral_r',
-        stopwords=set(stop_words))
+        colormap=cm.inferno,
+        stopwords=set(stop_words),
+        font_path='C:\\Windows\\Fonts\\seguiemj.ttf')
     
     df_wc = wc.generate(text)
 
@@ -164,3 +166,12 @@ def month_activity_map(selected_user, df):
         df = df[df['user'] == selected_user]
     
     return df['month'].value_counts()
+
+
+def generate_activity_heatmap(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    
+    activity_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
+
+    return activity_heatmap
