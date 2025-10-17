@@ -74,8 +74,7 @@ def create_wordcloud(selected_user, df):
         background_color='white',
         max_words=100,
         colormap=cm.inferno,
-        stopwords=set(stop_words),
-        font_path='C:\\Windows\\Fonts\\seguiemj.ttf')
+        stopwords=set(stop_words))
     
     df_wc = wc.generate(text)
 
