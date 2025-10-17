@@ -32,7 +32,7 @@ A **web application** that allows users to analyze their WhatsApp chat history. 
 
 1. **Clone the repository:**  
    ```bash
-   git clone <your-repo-link>
+   git clone https://github.com/ayuxi03/Whatsapp-Chat-Analysis.git
    cd whatsapp-chat-analyzer
 
 2. **Create and activate a virtual environment**
